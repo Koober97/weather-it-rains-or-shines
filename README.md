@@ -21,6 +21,6 @@
 
 ## Deployed Link
 
--
+- https://koober97.github.io/weather-it-rains-or-shines/
 
 ### Created by Brian Koo

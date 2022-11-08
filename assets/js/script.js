@@ -22,3 +22,24 @@ var formSubmitHandler = function(event){
     saveSearch();
     pastSearch(city);
 }
+
+var saveSearch = function(){
+    localStorage.setItem("cities", JSON.stringify(cities));
+};
+
+var getCityWeather = function(city){
+    var apiKey = "1efbe90938445ec45a8146fce795c02c"
+    var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+
+    fetch(apiURL)
+    .then(function(response){
+        response.json().then(function(data){
+            displayWeather(data, city);
+        });
+    });
+};
+
+ // previousSearch();
+ 
+ cityFormEl.addEventListener("submit", formSumbitHandler);
+ previousSearchButtonEl.addEventListener("click", previousSearchHandler);
